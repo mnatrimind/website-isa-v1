@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { SITE, NAV, scrollTo } from '@/lib/constants'
+import { SITE, scrollTo } from '@/lib/constants'
 import Container from './Container'
 import Button from '@/components/ui/Button'
 
@@ -9,28 +9,27 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A2540] pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/[0.08]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1a3550]">
           {/* Brand */}
           <div>
-            <span className="text-white font-heading font-bold text-lg block mb-1">{SITE.name}</span>
-            <p className="text-[#9CA3AF] text-sm">Brasil</p>
+            <span className="text-white font-heading font-bold text-lg block mb-2">{SITE.name}</span>
+            <p className="text-[#9CA3AF] text-sm mt-2">Automação inteligente para contabilidade.</p>
+            <p className="text-[#9CA3AF] text-sm mt-4">Brasil</p>
           </div>
 
           {/* Produto */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Produto</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">Produto</h4>
             <ul className="space-y-2.5">
-              {NAV.map(l => (
-                <li key={l.id}>
-                  <button onClick={() => scrollTo(l.id)} className="text-[#9CA3AF] text-sm hover:text-white transition-colors cursor-pointer">{l.label}</button>
-                </li>
-              ))}
+              <li><button onClick={() => scrollTo('funcionalidades')} className="text-[#9CA3AF] text-sm hover:text-white transition-colors cursor-pointer">Funcionalidades</button></li>
+              <li><button onClick={() => scrollTo('como-funciona')} className="text-[#9CA3AF] text-sm hover:text-white transition-colors cursor-pointer">Como funciona</button></li>
+              <li><button onClick={() => scrollTo('seguranca')} className="text-[#9CA3AF] text-sm hover:text-white transition-colors cursor-pointer">Segurança</button></li>
             </ul>
           </div>
 
           {/* Empresa */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Empresa</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2.5">
               <li><button onClick={(e) => e.preventDefault()} className="text-[#9CA3AF] text-sm hover:text-white transition-colors cursor-pointer">Contato</button></li>
               <li><Link href="/privacidade" className="text-[#9CA3AF] text-sm hover:text-white transition-colors">Privacidade</Link></li>
@@ -40,7 +39,7 @@ export default function Footer() {
 
           {/* CTA */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Comece agora</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">Comece agora</h4>
             <Button size="sm" onClick={(e) => e.preventDefault()}>Agendar demonstração →</Button>
           </div>
         </div>

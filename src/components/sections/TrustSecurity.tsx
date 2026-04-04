@@ -20,7 +20,7 @@ const items = [
 
 export default function TrustSecurity() {
   return (
-    <section className="py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #F6F9FC, #F0F4F8)' }}>
+    <section id="seguranca" className="py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #F6F9FC, #F0F4F8)' }}>
       <Container>
         <div className="text-center mb-14">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Segurança</p>

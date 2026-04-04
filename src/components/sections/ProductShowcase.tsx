@@ -1,10 +1,10 @@
 import Container from '@/components/layout/Container'
 
 function Step({ label, done, active, num }: { label: string; done?: boolean; active?: boolean; num: number }) {
-  const cls = done ? 'bg-green/10 text-green ring-1 ring-green/30' : active ? 'bg-primary text-white' : 'bg-surface text-muted ring-1 ring-border/60'
+  const cls = done ? 'bg-green/15 text-green ring-2 ring-green/30' : active ? 'bg-primary text-white ring-2 ring-primary/20' : 'bg-surface text-muted ring-2 ring-border/60'
   return (
-    <div className="flex flex-col items-center gap-1">
-      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold ${cls}`}>
+    <div className="flex flex-col items-center gap-1.5">
+      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold ${cls}`}>
         {done ? '\u2713' : num}
       </div>
       <span className={`text-[9px] font-medium ${active ? 'text-primary' : 'text-muted'}`}>{label}</span>
@@ -21,10 +21,9 @@ export default function ProductShowcase() {
   ]
 
   return (
-    <section id="produto" className="py-24 md:py-32">
+    <section className="py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #F6F9FC, #F0F4F8 50%, #F6F9FC)' }}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          {/* Text */}
           <div className="lg:col-span-2">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">O produto</p>
             <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-primary mb-4">Veja cada etapa da conciliação</h2>
@@ -39,47 +38,49 @@ export default function ProductShowcase() {
             </ul>
           </div>
 
-          {/* Product UI — clean card, NO browser chrome */}
           <div className="lg:col-span-3 relative">
-            <div className="absolute -inset-6 bg-accent/[0.04] rounded-3xl blur-[30px]" />
+            {/* Gradient glow behind */}
+            <div className="absolute -inset-10 rounded-[40px] bg-accent/[0.05] blur-[50px]" />
 
             {/* Floating annotations */}
-            <div className="hidden md:flex absolute -top-3 right-6 bg-white shadow-lg shadow-black/[0.06] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
-              <span className="w-[6px] h-[6px] rounded-full bg-green animate-pulse" />
-              <span className="text-[10px] font-medium text-primary">IA ativa</span>
+            <div className="hidden md:flex absolute -top-4 right-6 bg-white shadow-lg shadow-black/[0.08] rounded-lg px-3 py-2 items-center gap-2 z-20 border border-border/50">
+              <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
+              <span className="text-[11px] font-semibold text-primary">IA ativa</span>
             </div>
-            <div className="hidden md:flex absolute top-20 -left-3 bg-white shadow-lg shadow-black/[0.06] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
-              <span className="w-[6px] h-[6px] rounded-full bg-accent" />
-              <span className="text-[10px] font-medium text-primary">Matching automático</span>
+            <div className="hidden md:flex absolute top-24 -left-4 bg-white shadow-lg shadow-black/[0.08] rounded-lg px-3 py-2 items-center gap-2 z-20 border border-border/50">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <span className="text-[11px] font-semibold text-primary">Matching automático</span>
             </div>
 
-            <div className="relative bg-white rounded-2xl shadow-xl shadow-black/[0.08] border border-border/60 overflow-hidden">
+            <div className="relative bg-white rounded-2xl shadow-2xl shadow-black/[0.12] border border-border/60 overflow-hidden">
               <div className="p-5 md:p-6">
-                {/* Stepper */}
-                <div className="flex items-center justify-center gap-0 max-w-xs mx-auto mb-6">
+                {/* Stepper with thicker lines */}
+                <div className="flex items-center justify-center gap-0 max-w-sm mx-auto mb-7">
                   <Step label="Empresa" done num={1} />
-                  <div className="w-8 h-px bg-green/40 mx-0.5 mb-4" />
+                  <div className="w-10 h-[2px] bg-green/40 mx-1 mb-5" />
                   <Step label="Importações" done num={2} />
-                  <div className="w-8 h-px bg-green/40 mx-0.5 mb-4" />
+                  <div className="w-10 h-[2px] bg-green/40 mx-1 mb-5" />
                   <Step label="Conciliação" active num={3} />
-                  <div className="w-8 h-px bg-border mx-0.5 mb-4" />
+                  <div className="w-10 h-[2px] bg-border mx-1 mb-5" />
                   <Step label="Resultado" num={4} />
                 </div>
+
                 <h3 className="text-sm font-semibold text-primary mb-0.5">Revise a Conciliação</h3>
                 <p className="text-[11px] text-muted mb-4">Valide as correspondências da IA.</p>
+
                 <div className="rounded-lg border border-border/50 overflow-x-auto">
                   <table className="w-full min-w-[440px]">
-                    <thead><tr className="bg-surface/60">
-                      {['DATA', 'C/D', 'CONTA', 'VALOR', 'STATUS'].map(h => <th key={h} className="text-[8px] uppercase tracking-wider text-muted font-medium text-left px-3 py-1.5">{h}</th>)}
+                    <thead><tr className="bg-surface/80">
+                      {['DATA', 'C/D', 'CONTA', 'VALOR', 'STATUS'].map(h => <th key={h} className="text-[8px] uppercase tracking-wider text-muted font-medium text-left px-3 py-2">{h}</th>)}
                     </tr></thead>
                     <tbody>
                       {rows.map((r, i) => (
-                        <tr key={i} className="border-t border-border/30">
-                          <td className="text-[11px] text-primary px-3 py-2">{r.date}</td>
-                          <td className="text-[11px] text-primary px-3 py-2">{r.cd}</td>
-                          <td className="text-[11px] px-3 py-2">{r.sel ? <span className="text-muted bg-surface border border-border/50 rounded px-2 py-0.5 text-[10px]">{r.conta}</span> : <span className="text-primary">{r.conta}</span>}</td>
-                          <td className="text-[11px] text-primary px-3 py-2 font-medium">{r.valor}</td>
-                          <td className="px-3 py-2"><span className={`text-[9px] font-semibold px-2 py-0.5 rounded-full ${r.c}`}>{r.status}</span></td>
+                        <tr key={i} className={`border-t border-border/30 ${i % 2 === 1 ? 'bg-[#F9FAFB]' : ''}`}>
+                          <td className="text-[11px] text-primary px-3 py-2.5">{r.date}</td>
+                          <td className="text-[11px] text-primary px-3 py-2.5">{r.cd}</td>
+                          <td className="text-[11px] px-3 py-2.5">{r.sel ? <span className="text-muted bg-surface border border-border/50 rounded px-2 py-0.5 text-[10px]">{r.conta}</span> : <span className="text-primary">{r.conta}</span>}</td>
+                          <td className="text-[11px] text-primary px-3 py-2.5 font-medium">{r.valor}</td>
+                          <td className="px-3 py-2.5"><span className={`text-[9px] font-semibold px-2.5 py-1 rounded-full ${r.c}`}>{r.status}</span></td>
                         </tr>
                       ))}
                     </tbody>

@@ -7,7 +7,6 @@ export const NAV = [
   { label: 'Produto', id: 'produto' },
   { label: 'Funcionalidades', id: 'funcionalidades' },
   { label: 'Como funciona', id: 'como-funciona' },
-  { label: 'Preço', id: 'preco' },
 ]
 
 export function scrollTo(id: string) {
