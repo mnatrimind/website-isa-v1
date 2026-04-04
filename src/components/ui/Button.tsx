@@ -1,3 +1,5 @@
+'use client'
+
 import { type ComponentPropsWithoutRef } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'ghost'
@@ -7,6 +9,7 @@ interface ButtonProps {
   variant?: Variant
   size?: Size
   href?: string
+  onClick?: (e: React.MouseEvent) => void
   children: React.ReactNode
   className?: string
 }
@@ -27,22 +30,23 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   href,
+  onClick,
   children,
   className = '',
   ...rest
 }: ButtonProps & Omit<ComponentPropsWithoutRef<'button'>, keyof ButtonProps>) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${variantStyles[variant]} ${sizeStyles[size]} ${className}`
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 ease-in-out cursor-pointer whitespace-nowrap ${variantStyles[variant]} ${sizeStyles[size]} ${className}`
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} onClick={onClick} className={classes}>
         {children}
       </a>
     )
   }
 
   return (
-    <button className={classes} {...rest}>
+    <button className={classes} onClick={onClick} {...rest}>
       {children}
     </button>
   )

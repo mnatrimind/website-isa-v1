@@ -15,7 +15,6 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
   useEffect(() => {
     const el = ref.current
     if (!el) return
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,9 +22,8 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     )
-
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
@@ -34,7 +32,7 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

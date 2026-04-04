@@ -11,7 +11,7 @@
   --color-green: #1B7A4A;
   --color-green-light: #ECFDF5;
   --color-white: #FFFFFF;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -19,12 +19,14 @@
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
     color: var(--color-primary-text);
     background: var(--color-background);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
   ::selection {
-    background: rgba(99, 91, 255, 0.15);
+    background: rgba(99, 91, 255, 0.12);
   }
 }
