@@ -15,8 +15,8 @@ const companyLinks = [
   { label: 'Contato' },
 ]
 const legalLinks = [
-  { label: 'Política de Privacidade', href: '/website-isa-v1/privacy-policy/' },
-  { label: 'Termos de Uso', href: '/website-isa-v1/terms-of-service/' },
+  { label: 'Política de Privacidade', href: '/website-isa-v1/privacidade/' },
+  { label: 'Termos de Uso', href: '/website-isa-v1/termos/' },
 ]
 
 export default function Footer() {
@@ -92,9 +92,9 @@ export default function Footer() {
         <div className="pt-8 text-center space-y-2">
           <p className="text-gray-500 text-xs">
             Ao utilizar esta plataforma, você concorda com nossa{' '}
-            <Link href="/website-isa-v1/privacy-policy/" className="underline hover:text-gray-400">Política de Privacidade</Link>
+            <Link href="/website-isa-v1/privacidade/" className="underline hover:text-gray-400">Política de Privacidade</Link>
             {' '}e{' '}
-            <Link href="/website-isa-v1/terms-of-service/" className="underline hover:text-gray-400">Termos de Uso</Link>.
+            <Link href="/website-isa-v1/termos/" className="underline hover:text-gray-400">Termos de Uso</Link>.
           </p>
           <p className="text-gray-500 text-xs">
             &copy; 2026 ISA — Intelligent Systems for Accounting
