@@ -350,6 +350,35 @@
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
     }
 
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .benefit-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--card-shadow-light);
+    }
+    .benefit-card strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--green-primary);
+    }
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text-on-light);
+    }
+    .benefit-card p {
+      color: var(--text-on-light-muted);
+      font-size: 0.95rem;
+    }
+
     /* Scroll reveal */
     .reveal {
       opacity: 0; transform: translateY(30px);
@@ -370,6 +399,7 @@
       .showcase { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
       .compare-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
       .cta-block { flex-direction: column; align-items: flex-start; }
       .footer-grid { grid-template-columns: 1fr; }
     }
@@ -379,6 +409,7 @@
       .hero { padding: 36px 0; }
       .hero-actions { flex-direction: column; }
       .hero-actions .button { width: 100%; }
+      .benefits-grid { grid-template-columns: 1fr; }
       .cta-block { padding: 18px; }
       .cta-actions { width: 100%; }
       .cta-actions .button { width: 100%; }
@@ -621,7 +652,45 @@
       </div>
     </section>
 
-    <section id="beneficios" class="reveal">
+    <section id="beneficios" class="light-section reveal" style="background: var(--bg-light); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>O impacto direto no seu escritório</h2>
+          <p>Benefícios tangíveis para produtividade, organização e rentabilidade da operação contábil.</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <strong>Até 99%</strong>
+            <h3>Mais rapidez</h3>
+            <p>Reduza drasticamente o tempo necessário para conciliar e revisar lançamentos.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Menos erros</strong>
+            <h3>Mais controle</h3>
+            <p>Detecte divergências com antecedência e aumente a consistência entre contas.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Mais foco</strong>
+            <h3>Menos retrabalho</h3>
+            <p>Libere a equipe de tarefas repetitivas e concentre esforço no que gera valor.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Mais escala</strong>
+            <h3>Crescimento sustentável</h3>
+            <p>Aumente capacidade sem precisar ampliar proporcionalmente a estrutura.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Mais agilidade</strong>
+            <h3>Entregas melhores</h3>
+            <p>Fechamentos mais rápidos, maior previsibilidade e melhor experiência para o cliente.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Mais resultado</strong>
+            <h3>Mais lucro operacional</h3>
+            <p>Tempo poupado e menos erro significam uma operação mais eficiente e rentável.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="diferencial" class="reveal" style="background: var(--bg-dark); padding: 72px 0;">
