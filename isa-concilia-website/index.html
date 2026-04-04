@@ -99,12 +99,55 @@
     .mobile-menu.open { right: 0; }
     .mobile-menu a { color: var(--text-on-dark); font-size: 1.1rem; }
 
+    .hero {
+      padding: 56px 0 44px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(107,78,255,0.20), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(25,198,255,0.16), transparent 28%),
+        linear-gradient(180deg, #07111f 0%, #091221 35%, #06101d 100%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 10px 16px; border-radius: 999px;
+      border: 1px solid rgba(143,240,214,0.2);
+      background: rgba(143,240,214,0.07);
+      color: #d6fff5; font-size: 0.9rem; margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1.05; letter-spacing: -0.04em; }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #d5e2ff 40%, #8fd6ff 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy {
+      color: var(--text-on-dark-muted); font-size: 1.12rem;
+      max-width: 58ch; margin: 20px 0 28px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+    .hero-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .metric-card {
+      background: var(--card-dark); border: 1px solid var(--border-dark);
+      border-radius: 20px; padding: 18px;
+      box-shadow: var(--card-shadow-dark);
+    }
+    .metric-card strong {
+      display: block; font-size: 1.5rem; margin-bottom: 4px; color: var(--text-on-dark);
+    }
+    .metric-card span { color: var(--text-on-dark-muted); font-size: 0.9rem; }
+
     @media (max-width: 1050px) {
       .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-metrics { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .nav-actions { display: none; }
       .hamburger { display: block; }
+      .hero { padding: 36px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .button { width: 100%; }
     }
   </style>
 </head>
@@ -144,6 +187,35 @@
 
   <main>
     <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">Inteligência Artificial aplicada à contabilidade</div>
+          <h1><span class="gradient-text">Pare de perder dias na conciliação contábil</span></h1>
+          <p class="hero-copy">Seu escritório merece uma operação que funciona em minutos — não em dias. O Isa Concilia automatiza até 99% da conciliação bancária com IA, conectando extratos ao balancete com precisão.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#cta-final">Agendar demonstração gratuita</a>
+            <a class="button secondary" href="#como-funciona">Ver como funciona</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <strong>Até 99%</strong>
+              <span>mais rapidez no processo</span>
+            </div>
+            <div class="metric-card">
+              <strong>Menos erros</strong>
+              <span>mais consistência nos lançamentos</span>
+            </div>
+            <div class="metric-card">
+              <strong>Mais escala</strong>
+              <span>cresça sem aumentar a equipe</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-mockup" id="demonstracao">
+          <!-- Dashboard mockup will be added in next prompt -->
+          <div style="min-height: 400px; background: var(--card-dark); border-radius: var(--radius-lg); border: 1px solid var(--border-dark);"></div>
+        </div>
+      </div>
     </section>
 
     <section class="pain-section">
