@@ -2,7 +2,7 @@ import mockupReconciliation from '../components/mockup-reconciliation.js';
 
 export default function showcase() {
   return `
-<section class="showcase" id="como-funciona">
+<section class="showcase">
   <div class="container">
     <div class="showcase__header reveal">
       <span class="section-label">O produto</span>
