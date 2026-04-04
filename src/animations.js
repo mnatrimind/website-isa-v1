@@ -45,4 +45,25 @@ export function initAnimations() {
   drawer?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeDrawer);
   });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq__item');
+      const answer = item.querySelector('.faq__answer');
+      const isActive = item.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.faq__item.active').forEach(open => {
+        open.classList.remove('active');
+        open.querySelector('.faq__answer').style.maxHeight = null;
+      });
+
+      // Open clicked (if it wasn't already open)
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
 }
