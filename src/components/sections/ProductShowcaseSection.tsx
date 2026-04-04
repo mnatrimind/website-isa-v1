@@ -10,6 +10,17 @@ function ReconciliationMockup() {
   ]
 
   return (
+    <div className="relative">
+      {/* Floating annotation labels */}
+      <div className="hidden md:flex absolute -top-3 right-4 bg-white shadow-lg rounded-full px-3 py-1.5 items-center gap-2 z-10">
+        <span className="w-2 h-2 rounded-full bg-green-500" />
+        <span className="text-[11px] font-semibold text-primary-text">IA ativa</span>
+      </div>
+      <div className="hidden md:flex absolute top-16 -left-2 bg-white shadow-lg rounded-full px-3 py-1.5 items-center gap-2 z-10">
+        <span className="w-2 h-2 rounded-full bg-green-500" />
+        <span className="text-[11px] font-semibold text-primary-text">Matching automático</span>
+      </div>
+
     <div className="bg-white rounded-xl shadow-lg border border-border overflow-hidden">
       <div className="flex items-center gap-3 px-4 py-3 bg-surface border-b border-border">
         <div className="flex gap-1.5">
@@ -83,6 +94,7 @@ function ReconciliationMockup() {
           </table>
         </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -116,13 +116,10 @@ function DashboardMockup() {
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden">
-      {/* Gradient mesh background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-accent/[0.05] rounded-full blur-[140px] -translate-y-1/3 translate-x-1/4" />
-        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-accent/[0.03] rounded-full blur-[100px] -translate-x-1/3" />
-        <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-[#635BFF]/[0.04] rounded-full blur-[80px]" />
-      </div>
+    <section
+      className="relative py-24 md:py-32 lg:py-40 overflow-hidden"
+      style={{ background: 'radial-gradient(ellipse at 70% 0%, rgba(99,91,255,0.05) 0%, transparent 50%), radial-gradient(ellipse at 100% 50%, rgba(99,91,255,0.03) 0%, transparent 40%), radial-gradient(ellipse at 0% 100%, rgba(0,100,255,0.02) 0%, transparent 40%), #ffffff' }}
+    >
 
       <Container className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

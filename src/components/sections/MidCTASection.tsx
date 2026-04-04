@@ -5,17 +5,19 @@ import Button from '@/components/ui/Button'
 
 export default function MidCTASection() {
   return (
-    <section className="bg-surface py-24 md:py-32">
+    <section className="py-16">
       <Container className="text-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary-text tracking-tight mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary-text tracking-tight">
           Pronto para automatizar sua conciliação?
         </h2>
-        <p className="text-base md:text-lg text-secondary-text max-w-xl mx-auto leading-relaxed mb-8">
-          Veja na prática como o Isa Concilia pode transformar a rotina do seu escritório.
+        <p className="text-secondary-text mt-3">
+          Veja o Isa Concilia em ação com uma demonstração personalizada.
         </p>
-        <Button variant="primary" size="lg" onClick={(e) => e.preventDefault()}>
-          Agendar demonstração gratuita
-        </Button>
+        <div className="mt-6">
+          <Button variant="primary" size="md" onClick={(e) => e.preventDefault()}>
+            Agendar demonstração
+          </Button>
+        </div>
       </Container>
     </section>
   )

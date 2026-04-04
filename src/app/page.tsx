@@ -13,25 +13,15 @@ import FinalCTASection from '@/components/sections/FinalCTASection'
 export default function Home() {
   return (
     <main>
-      {/* white + gradient */}
       <HeroSection />
-      {/* surface */}
       <TrustSection />
-      {/* white */}
       <Reveal><ProblemSolutionSection /></Reveal>
-      {/* surface */}
       <Reveal><ProductShowcaseSection /></Reveal>
-      {/* white */}
       <Reveal><FeaturesSection /></Reveal>
-      {/* surface */}
-      <Reveal><MidCTASection /></Reveal>
-      {/* white */}
+      <MidCTASection />
       <Reveal><HowItWorksSection /></Reveal>
-      {/* surface */}
       <Reveal><UseCasesSection /></Reveal>
-      {/* surface */}
       <TrustFAQSection />
-      {/* white */}
       <Reveal><FinalCTASection /></Reveal>
     </main>
   )

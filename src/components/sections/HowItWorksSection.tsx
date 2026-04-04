@@ -35,6 +35,9 @@ export default function HowItWorksSection() {
             ))}
           </div>
         </div>
+        <p className="text-center text-secondary-text text-sm mt-12 max-w-md mx-auto">
+          Sem instalação complexa. Sem mudança no seu sistema atual. O Isa Concilia se adapta à sua rotina.
+        </p>
       </Container>
     </section>
   )

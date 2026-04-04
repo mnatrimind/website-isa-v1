@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { SITE, NAV_LINKS, scrollTo } from '@/lib/constants'
 import Container from './Container'
 import Button from '@/components/ui/Button'
@@ -36,8 +37,8 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm mb-4">Empresa</h4>
             <ul className="space-y-3">
               <li><button onClick={(e) => e.preventDefault()} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">Contato</button></li>
-              <li><button onClick={(e) => e.preventDefault()} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">Privacidade</button></li>
-              <li><button onClick={(e) => e.preventDefault()} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">Termos</button></li>
+              <li><Link href="/website-isa-v1/privacidade/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Privacidade</Link></li>
+              <li><Link href="/website-isa-v1/termos/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Termos</Link></li>
             </ul>
           </div>
 
@@ -49,7 +50,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 text-center">
+        <div className="pt-8 text-center space-y-2">
+          <p className="text-gray-500 text-xs">
+            Ao utilizar esta plataforma, você concorda com nossa{' '}
+            <Link href="/website-isa-v1/privacidade/" className="underline hover:text-gray-400">Política de Privacidade</Link>
+            {' '}e{' '}
+            <Link href="/website-isa-v1/termos/" className="underline hover:text-gray-400">Termos de Uso</Link>.
+          </p>
           <p className="text-gray-500 text-xs">
             &copy; 2026 ISA — Intelligent Systems for Accounting
           </p>
