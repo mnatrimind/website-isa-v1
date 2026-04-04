@@ -160,8 +160,9 @@ export default function mockup() {
 .mockup__pill--amber{background:#FEF3C7;color:var(--amber-500)}
 @media(max-width:640px){
   .mockup{transform:scale(0.75)}
-  .mockup__sidebar{width:100px}
+  .mockup__sidebar{display:none}
   .mockup__content-row{grid-template-columns:1fr}
+  .mockup__kpis{grid-template-columns:1fr}
 }
 </style>`;
 }
