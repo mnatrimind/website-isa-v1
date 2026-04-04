@@ -137,10 +137,122 @@
     }
     .metric-card span { color: var(--text-on-dark-muted); font-size: 0.9rem; }
 
+    /* Dashboard mockup */
+    @keyframes float {
+      0%, 100% { transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(0); }
+      50% { transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-10px); }
+    }
+    .hero-mockup { animation: float 6s ease-in-out infinite; }
+    .mockup-wrapper { transform: scale(0.85); transform-origin: top center; }
+    .browser-chrome {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-dark);
+      background: linear-gradient(135deg, #1a1e2e, #141824);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+    .browser-bar {
+      display: flex; align-items: center; padding: 10px 14px;
+      background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+    }
+    .browser-dots { display: flex; gap: 6px; }
+    .browser-dots span {
+      width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15);
+    }
+    .browser-title {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      font-size: 0.7rem; color: rgba(255,255,255,0.5); font-weight: 600;
+    }
+    .browser-body { display: flex; background: #fff; }
+
+    /* Sidebar */
+    .mock-sidebar {
+      width: 180px; min-width: 180px; background: #F8F9FA;
+      border-right: 1px solid #E5E7EB; padding: 12px 0;
+      display: flex; flex-direction: column; font-size: 0.62rem; color: #1A1A2E;
+    }
+    .sidebar-brand {
+      display: flex; align-items: center; gap: 6px; padding: 0 12px 10px;
+      font-size: 0.68rem;
+    }
+    .sidebar-icon {
+      width: 22px; height: 22px; border-radius: 5px; background: #1A1A2E;
+    }
+    .sidebar-plat { color: #1B7A4A; font-weight: 600; }
+    .sidebar-dropdown {
+      margin: 0 10px 10px; padding: 5px 8px; border-radius: 6px;
+      border: 1px solid #E5E7EB; font-size: 0.58rem; color: #6B7280;
+    }
+    .sidebar-label {
+      padding: 6px 12px 4px; font-size: 0.5rem; font-weight: 700;
+      color: #1B7A4A; letter-spacing: 0.08em;
+    }
+    .sidebar-item {
+      padding: 6px 12px; color: #6B7280; cursor: default;
+    }
+    .sidebar-item.active {
+      background: rgba(59,130,246,0.08); color: #1A1A2E; font-weight: 600;
+      border-left: 3px solid #1B7A4A;
+    }
+    .sidebar-spacer { flex: 1; }
+    .sidebar-item.bottom { font-size: 0.55rem; color: #9CA3AF; }
+
+    /* Main content area */
+    .mock-main { flex: 1; padding: 14px 16px; min-width: 0; }
+    .mock-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px;
+    }
+    .mock-heading { font-size: 0.85rem; font-weight: 700; color: #1A1A2E; }
+    .mock-date-badge {
+      font-size: 0.55rem; padding: 3px 10px; border-radius: 999px;
+      background: #F3F4F6; color: #6B7280; font-weight: 500;
+    }
+
+    /* KPI cards */
+    .mock-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    .mock-kpi {
+      border: 1px solid #E5E7EB; border-radius: 8px; padding: 10px;
+      background: #fff;
+    }
+    .mock-kpi-label { font-size: 0.55rem; color: #6B7280; margin-bottom: 2px; }
+    .mock-kpi-value { font-size: 1.1rem; font-weight: 800; color: #1A1A2E; }
+    .mock-kpi-change { font-size: 0.5rem; color: #1B7A4A; margin-top: 2px; }
+
+    /* Panels */
+    .mock-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mock-chart-panel {
+      border: 1px solid #E5E7EB; border-radius: 8px; padding: 10px;
+      background: #fff;
+    }
+    .mock-chart { width: 100%; height: auto; }
+    .mock-table-panel {
+      border: 1px solid #E5E7EB; border-radius: 8px; padding: 10px;
+      background: #fff;
+    }
+    .mock-table-title { font-size: 0.62rem; font-weight: 700; color: #1A1A2E; margin-bottom: 6px; }
+    .mock-table { width: 100%; border-collapse: collapse; font-size: 0.55rem; color: #1A1A2E; }
+    .mock-table th {
+      text-align: left; font-size: 0.48rem; color: #9CA3AF;
+      letter-spacing: 0.06em; padding: 3px 4px;
+      border-bottom: 1px solid #E5E7EB; font-weight: 600;
+    }
+    .mock-table td { padding: 5px 4px; border-bottom: 1px solid #F3F4F6; }
+    .pill {
+      display: inline-block; padding: 1px 7px; border-radius: 999px;
+      font-size: 0.48rem; font-weight: 700; color: #fff;
+    }
+    .pill.green { background: #1B7A4A; }
+    .pill.red { background: #EF4444; }
+    .pill.amber { background: #F59E0B; }
+
     @media (max-width: 1050px) {
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-metrics { grid-template-columns: 1fr; }
+      .hero-mockup { animation: none; }
+      .mockup-wrapper { transform: scale(1); }
+      .mock-sidebar { display: none; }
     }
     @media (max-width: 720px) {
       .nav-actions { display: none; }
@@ -212,8 +324,94 @@
           </div>
         </div>
         <div class="hero-mockup" id="demonstracao">
-          <!-- Dashboard mockup will be added in next prompt -->
-          <div style="min-height: 400px; background: var(--card-dark); border-radius: var(--radius-lg); border: 1px solid var(--border-dark);"></div>
+          <div class="mockup-wrapper">
+            <div class="browser-chrome">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-title">ISA Plataform</div>
+              </div>
+              <div class="browser-body">
+                <!-- Sidebar -->
+                <aside class="mock-sidebar">
+                  <div class="sidebar-brand">
+                    <div class="sidebar-icon"></div>
+                    <div><strong>ISA</strong> <small class="sidebar-plat">Plataform</small></div>
+                  </div>
+                  <div class="sidebar-dropdown">Selecionar empresa ▾</div>
+                  <div class="sidebar-label">MENU</div>
+                  <div class="sidebar-item active">Dashboard</div>
+                  <div class="sidebar-item">Empresas</div>
+                  <div class="sidebar-item">Conciliações</div>
+                  <div class="sidebar-spacer"></div>
+                  <div class="sidebar-item bottom">Ajuda e Suporte</div>
+                  <div class="sidebar-item bottom">Configurações</div>
+                </aside>
+                <!-- Main content -->
+                <div class="mock-main">
+                  <div class="mock-topbar">
+                    <span class="mock-heading">Dashboard</span>
+                    <span class="mock-date-badge">Jan 26 - Jan 31</span>
+                  </div>
+                  <div class="mock-kpis">
+                    <div class="mock-kpi">
+                      <div class="mock-kpi-label">Empresas Ativas</div>
+                      <div class="mock-kpi-value">12</div>
+                      <div class="mock-kpi-change">↗ +2 este mês</div>
+                    </div>
+                    <div class="mock-kpi">
+                      <div class="mock-kpi-label">Conciliações Realizadas</div>
+                      <div class="mock-kpi-value">87</div>
+                      <div class="mock-kpi-change">↗ +14 este mês</div>
+                    </div>
+                    <div class="mock-kpi">
+                      <div class="mock-kpi-label">Arquivos Importados</div>
+                      <div class="mock-kpi-value">156</div>
+                      <div class="mock-kpi-change">↗ +23 este mês</div>
+                    </div>
+                  </div>
+                  <div class="mock-panels">
+                    <div class="mock-chart-panel">
+                      <svg class="mock-chart" viewBox="0 0 200 100" preserveAspectRatio="none">
+                        <!-- Bars: blue and orange pairs -->
+                        <rect x="12" y="55" width="14" height="40" rx="2" fill="#3B82F6"/>
+                        <rect x="28" y="65" width="14" height="30" rx="2" fill="#F59E0B"/>
+                        <rect x="52" y="40" width="14" height="55" rx="2" fill="#3B82F6"/>
+                        <rect x="68" y="50" width="14" height="45" rx="2" fill="#F59E0B"/>
+                        <rect x="92" y="30" width="14" height="65" rx="2" fill="#3B82F6"/>
+                        <rect x="108" y="45" width="14" height="50" rx="2" fill="#F59E0B"/>
+                        <rect x="132" y="20" width="14" height="75" rx="2" fill="#3B82F6"/>
+                        <rect x="148" y="35" width="14" height="60" rx="2" fill="#F59E0B"/>
+                        <rect x="172" y="10" width="14" height="85" rx="2" fill="#3B82F6"/>
+                        <rect x="188" y="25" width="14" height="70" rx="2" fill="#F59E0B"/>
+                        <!-- X-axis labels -->
+                        <text x="26" y="100" font-size="6" fill="#6B7280" text-anchor="middle">Set</text>
+                        <text x="66" y="100" font-size="6" fill="#6B7280" text-anchor="middle">Out</text>
+                        <text x="106" y="100" font-size="6" fill="#6B7280" text-anchor="middle">Nov</text>
+                        <text x="146" y="100" font-size="6" fill="#6B7280" text-anchor="middle">Dez</text>
+                        <text x="186" y="100" font-size="6" fill="#6B7280" text-anchor="middle">Jan</text>
+                      </svg>
+                    </div>
+                    <div class="mock-table-panel">
+                      <div class="mock-table-title">Últimas conciliações</div>
+                      <table class="mock-table">
+                        <thead>
+                          <tr><th>EMPRESA</th><th>REFERÊNCIA</th><th>STATUS</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Alianca Transporte</td><td>Janeiro 2026</td><td><span class="pill green">CONCILIADO</span></td></tr>
+                          <tr><td>Nações Express</td><td>Janeiro 2026</td><td><span class="pill green">CONCILIADO</span></td></tr>
+                          <tr><td>Alianca Transporte</td><td>Janeiro 2026</td><td><span class="pill red">ERRO</span></td></tr>
+                          <tr><td>Nações Express</td><td>Janeiro 2026</td><td><span class="pill amber">AGUARDANDO</span></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
