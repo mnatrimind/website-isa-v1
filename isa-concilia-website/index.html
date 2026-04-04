@@ -283,6 +283,30 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
+    /* Solution section — light */
+    .light-section { color: var(--text-on-light); }
+    .light-section h2, .light-section h3, .light-section strong { color: var(--text-on-light); }
+    .light-section p { color: var(--text-on-light-muted); }
+
+    .light-card {
+      background: var(--bg-light); border: 1px solid var(--border-light);
+      border-radius: 22px; padding: 24px; box-shadow: var(--card-shadow-light);
+    }
+    .light-card strong { display: block; font-size: 1.15rem; margin-bottom: 8px; color: var(--text-on-light); }
+    .light-card p { color: var(--text-on-light-muted); }
+
+    .showcase { display: grid; grid-template-columns: 1fr 380px; gap: 20px; }
+    .showcase-main h3 { font-size: 1.25rem; margin-bottom: 12px; color: var(--text-on-light); }
+    .showcase-main p { color: var(--text-on-light-muted); margin-bottom: 16px; }
+    .showcase-side { display: flex; flex-direction: column; gap: 18px; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag-green {
+      padding: 8px 14px; border-radius: 999px; font-size: 0.85rem;
+      background: var(--green-light); color: var(--green-primary);
+      border: 1px solid rgba(27,122,74,0.2); font-weight: 500;
+    }
+
     @media (max-width: 1050px) {
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
@@ -291,6 +315,7 @@
       .mockup-wrapper { transform: scale(1); }
       .mock-sidebar { display: none; }
       .pain-grid { grid-template-columns: 1fr; }
+      .showcase { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .nav-actions { display: none; }
@@ -485,7 +510,30 @@
 
     <div class="transition-band">A contabilidade evoluiu. Seu processo também precisa evoluir.</div>
 
-    <section id="solucao">
+    <section id="solucao" class="light-section" style="background: var(--bg-light); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Conheça o Isa Concilia</h2>
+          <p>Uma plataforma criada para automatizar a conciliação bancária e conectar o extrato ao balancete de forma inteligente, com mais precisão, velocidade e controle operacional.</p>
+        </div>
+        <div class="showcase">
+          <div class="light-card showcase-main">
+            <h3>O sistema trabalha por você</h3>
+            <p>O Isa Concilia identifica correspondências, organiza exceções, sugere classificações e acelera a validação final. Em vez de gastar dias conciliando, sua equipe passa a operar com mais eficiência e foco.</p>
+            <div class="tag-list">
+              <span class="tag-green">Conciliação bancária automática</span>
+              <span class="tag-green">Integração com balancete</span>
+              <span class="tag-green">IA aplicada</span>
+              <span class="tag-green">Detecção de inconsistências</span>
+            </div>
+          </div>
+          <div class="showcase-side">
+            <div class="light-card"><strong>Mais velocidade</strong><p>Automatize o que antes tomava horas ou dias.</p></div>
+            <div class="light-card"><strong>Mais precisão</strong><p>Reduza inconsistências e aumente a confiabilidade do processo.</p></div>
+            <div class="light-card"><strong>Mais escala</strong><p>Atenda melhor e cresça sem expandir o peso operacional.</p></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="como-funciona">
