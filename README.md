@@ -1,28 +1,16 @@
 # ISA Concilia — Website
 
-Marketing website for ISA Concilia, an AI-powered accounting reconciliation platform for Brazilian accounting firms.
+Marketing website for ISA Concilia. Next.js, TypeScript, Tailwind CSS.
 
-## Tech Stack
-
-- Next.js 16 (App Router, static export)
-- TypeScript
-- Tailwind CSS v4
-- Bricolage Grotesque + Instrument Sans (Google Fonts)
-- GitHub Pages via GitHub Actions
-
-## Development
+## Dev
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deployment
+## Deploy
 
-GitHub Actions automatically builds and deploys on push to `main`.
+Push to main — GitHub Actions builds automatically.
 
-## Pages
-
-- `/` — Homepage
-- `/privacidade` — Política de Privacidade (LGPD)
-- `/termos` — Termos de Uso
+Live: https://mnatrimind.github.io/website-isa-v1/
