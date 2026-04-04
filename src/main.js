@@ -1,25 +1,28 @@
-import './style.css'
-import { nav } from './sections/nav.js'
-import { hero } from './sections/hero.js'
-import { problem } from './sections/problem.js'
-import { solution } from './sections/solution.js'
-import { how } from './sections/how.js'
-import { benefits } from './sections/benefits.js'
-import { cta } from './sections/cta.js'
-import { footer } from './sections/footer.js'
-import { initAnimations } from './animations.js'
+import './style.css';
+import nav from './sections/nav.js';
+import hero from './sections/hero.js';
+import { initAnimations } from './animations.js';
 
-document.querySelector('#app').innerHTML = `
-  ${nav()}
-  <main>
-    ${hero()}
-    ${problem()}
-    ${solution()}
-    ${how()}
-    ${benefits()}
-    ${cta()}
-  </main>
-  ${footer()}
-`
+// Placeholder sections (to be built)
+function problem() { return ''; }
+function solution() { return ''; }
+function howItWorks() { return ''; }
+function benefits() { return ''; }
+function testimonials() { return ''; }
+function cta() { return ''; }
+function footer() { return ''; }
 
-initAnimations()
+const app = document.getElementById('app');
+app.innerHTML = [
+  nav(),
+  hero(),
+  problem(),
+  solution(),
+  howItWorks(),
+  benefits(),
+  testimonials(),
+  cta(),
+  footer(),
+].join('');
+
+initAnimations();
