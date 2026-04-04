@@ -3,18 +3,18 @@
 @theme inline {
   --color-background: #FFFFFF;
   --color-surface: #F6F9FC;
-  --color-primary-text: #0A2540;
-  --color-secondary-text: #425466;
-  --color-muted-text: #6B7C8F;
+  --color-primary: #0A2540;
+  --color-secondary: #425466;
+  --color-muted: #6B7C8F;
   --color-border: #E6EBF1;
   --color-accent: #635BFF;
-  --color-accent-light: #7A73FF;
-  --color-accent-dim: rgba(99, 91, 255, 0.08);
-  --color-green: #1B7A4A;
-  --color-green-light: #ECFDF5;
+  --color-accent-hover: #7A73FF;
+  --color-green: #00A67E;
+  --color-amber: #F5A623;
+  --color-red: #E25C5C;
   --color-white: #FFFFFF;
-  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-heading: 'Bricolage Grotesque', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -25,24 +25,19 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    color: var(--color-primary-text);
+    color: var(--color-primary);
     background: var(--color-background);
   }
-  ::selection {
-    background: rgba(99, 91, 255, 0.15);
-  }
+  ::selection { background: rgba(99, 91, 255, 0.14); }
 
-  /* Staggered page entrance */
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .animate-entrance {
-    animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  .animate-entrance-1 { animation-delay: 0ms; }
-  .animate-entrance-2 { animation-delay: 80ms; }
-  .animate-entrance-3 { animation-delay: 160ms; }
-  .animate-entrance-4 { animation-delay: 240ms; }
-  .animate-entrance-5 { animation-delay: 320ms; }
+  .entrance { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .d1 { animation-delay: 0ms; }
+  .d2 { animation-delay: 100ms; }
+  .d3 { animation-delay: 200ms; }
+  .d4 { animation-delay: 300ms; }
+  .d5 { animation-delay: 400ms; }
 }

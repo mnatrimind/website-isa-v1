@@ -1,32 +1,36 @@
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import Reveal from '@/components/ui/Reveal'
-import HeroSection from '@/components/sections/HeroSection'
-import ClarityStripSection from '@/components/sections/ClarityStripSection'
-import TrustSection from '@/components/sections/TrustSection'
-import ProblemSolutionSection from '@/components/sections/ProblemSolutionSection'
-import ProductShowcaseSection from '@/components/sections/ProductShowcaseSection'
-import FeaturesSection from '@/components/sections/FeaturesSection'
-import ProductDeepDiveSection from '@/components/sections/ProductDeepDiveSection'
-import MidCTASection from '@/components/sections/MidCTASection'
-import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import UseCasesSection from '@/components/sections/UseCasesSection'
-import TrustFAQSection from '@/components/sections/TrustFAQSection'
-import FinalCTASection from '@/components/sections/FinalCTASection'
+import Hero from '@/components/sections/Hero'
+import TrustMetrics from '@/components/sections/TrustMetrics'
+import ProblemSolution from '@/components/sections/ProblemSolution'
+import ProductShowcase from '@/components/sections/ProductShowcase'
+import Features from '@/components/sections/Features'
+import HowItWorks from '@/components/sections/HowItWorks'
+import UseCases from '@/components/sections/UseCases'
+import Pricing from '@/components/sections/Pricing'
+import FAQ from '@/components/sections/FAQ'
+import TrustSecurity from '@/components/sections/TrustSecurity'
+import FinalCTA from '@/components/sections/FinalCTA'
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-      <ClarityStripSection />
-      <TrustSection />
-      <Reveal><ProblemSolutionSection /></Reveal>
-      <Reveal><ProductShowcaseSection /></Reveal>
-      <Reveal><FeaturesSection /></Reveal>
-      <Reveal><ProductDeepDiveSection /></Reveal>
-      <MidCTASection />
-      <Reveal><HowItWorksSection /></Reveal>
-      <Reveal><UseCasesSection /></Reveal>
-      <TrustFAQSection />
-      <Reveal><FinalCTASection /></Reveal>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <TrustMetrics />
+        <Reveal><ProblemSolution /></Reveal>
+        <Reveal><ProductShowcase /></Reveal>
+        <Reveal><Features /></Reveal>
+        <Reveal><HowItWorks /></Reveal>
+        <Reveal><UseCases /></Reveal>
+        <Reveal><Pricing /></Reveal>
+        <Reveal><FAQ /></Reveal>
+        <Reveal><TrustSecurity /></Reveal>
+        <Reveal><FinalCTA /></Reveal>
+      </main>
+      <Footer />
+    </>
   )
 }

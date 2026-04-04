@@ -4,18 +4,11 @@ Marketing website for ISA Concilia, an AI-powered accounting reconciliation plat
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router, static export)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **Deployment:** GitHub Pages
-
-## Pages
-
-- `/` — Homepage (12 sections)
-- `/product/` — Product overview
-- `/learn/` — Resources and articles
-- `/privacy-policy/` — LGPD privacy policy
-- `/terms-of-service/` — Terms of use
+- Next.js 16 (App Router, static export)
+- TypeScript
+- Tailwind CSS v4
+- Bricolage Grotesque + Instrument Sans (Google Fonts)
+- GitHub Pages via GitHub Actions
 
 ## Development
 
@@ -24,15 +17,12 @@ npm install
 npm run dev
 ```
 
-## Build & Deploy
+## Deployment
 
-```bash
-npm run deploy
-git add -A && git commit -m "Deploy" && git push origin main
-```
+GitHub Actions automatically builds and deploys on push to `main`.
 
-The deploy script builds the project, copies static output to root, and creates `.nojekyll` for GitHub Pages compatibility.
+## Pages
 
-## Live
-
-https://mnatrimind.github.io/website-isa-v1/
+- `/` — Homepage
+- `/privacidade` — Política de Privacidade (LGPD)
+- `/termos` — Termos de Uso
