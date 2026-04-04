@@ -21,9 +21,10 @@ export default function ProductShowcase() {
   ]
 
   return (
-    <section className="py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #F6F9FC, #F0F4F8 50%, #F6F9FC)' }}>
+    <section id="produto" className="py-24 md:py-32">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Text */}
           <div className="lg:col-span-2">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">O produto</p>
             <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-primary mb-4">Veja cada etapa da conciliação</h2>
@@ -38,21 +39,23 @@ export default function ProductShowcase() {
             </ul>
           </div>
 
+          {/* Product UI — clean card, NO browser chrome */}
           <div className="lg:col-span-3 relative">
             <div className="absolute -inset-6 bg-accent/[0.04] rounded-3xl blur-[30px]" />
-            <div className="hidden md:flex absolute -top-3 right-6 bg-white/95 backdrop-blur-sm shadow-lg shadow-black/[0.05] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
-              <span className="w-[6px] h-[6px] rounded-full bg-green animate-pulse" /><span className="text-[10px] font-medium text-primary">IA ativa</span>
+
+            {/* Floating annotations */}
+            <div className="hidden md:flex absolute -top-3 right-6 bg-white shadow-lg shadow-black/[0.06] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
+              <span className="w-[6px] h-[6px] rounded-full bg-green animate-pulse" />
+              <span className="text-[10px] font-medium text-primary">IA ativa</span>
             </div>
-            <div className="hidden md:flex absolute top-20 -left-3 bg-white/95 backdrop-blur-sm shadow-lg shadow-black/[0.05] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
-              <span className="w-[6px] h-[6px] rounded-full bg-accent" /><span className="text-[10px] font-medium text-primary">Matching automático</span>
+            <div className="hidden md:flex absolute top-20 -left-3 bg-white shadow-lg shadow-black/[0.06] rounded-lg px-3 py-1.5 items-center gap-2 z-20 border border-border/50">
+              <span className="w-[6px] h-[6px] rounded-full bg-accent" />
+              <span className="text-[10px] font-medium text-primary">Matching automático</span>
             </div>
 
-            <div className="relative bg-white rounded-2xl shadow-xl shadow-black/[0.07] border border-border/70 overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2 bg-surface/80 border-b border-border/50">
-                <div className="flex gap-1.5"><span className="w-2 h-2 rounded-full bg-border" /><span className="w-2 h-2 rounded-full bg-border" /><span className="w-2 h-2 rounded-full bg-border" /></div>
-                <span className="text-[9px] text-muted font-medium ml-2">app.isaconcilia.com.br</span>
-              </div>
-              <div className="p-5">
+            <div className="relative bg-white rounded-2xl shadow-xl shadow-black/[0.08] border border-border/60 overflow-hidden">
+              <div className="p-5 md:p-6">
+                {/* Stepper */}
                 <div className="flex items-center justify-center gap-0 max-w-xs mx-auto mb-6">
                   <Step label="Empresa" done num={1} />
                   <div className="w-8 h-px bg-green/40 mx-0.5 mb-4" />

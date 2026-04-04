@@ -2,7 +2,6 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Reveal from '@/components/ui/Reveal'
 import Hero from '@/components/sections/Hero'
-import TrustMetrics from '@/components/sections/TrustMetrics'
 import ProblemSolution from '@/components/sections/ProblemSolution'
 import ProductShowcase from '@/components/sections/ProductShowcase'
 import Features from '@/components/sections/Features'
@@ -19,10 +18,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustMetrics />
         <Reveal><ProblemSolution /></Reveal>
         <Reveal><ProductShowcase /></Reveal>
-        <Reveal><Features /></Reveal>
+        <Features />
         <Reveal><HowItWorks /></Reveal>
         <Reveal><UseCases /></Reveal>
         <Reveal><Pricing /></Reveal>

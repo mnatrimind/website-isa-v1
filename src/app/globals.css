@@ -30,6 +30,23 @@
   }
   ::selection { background: rgba(99, 91, 255, 0.14); }
 
+  /* Stripe-style vertical dashed grid lines across entire page */
+  main::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 239px,
+      rgba(230, 235, 241, 0.45) 239px,
+      rgba(230, 235, 241, 0.45) 240px
+    );
+  }
+  main > * { position: relative; z-index: 1; }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }

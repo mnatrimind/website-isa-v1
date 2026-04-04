@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { SITE, NAV, scrollTo } from '@/lib/constants'
 import Container from './Container'
 import Button from '@/components/ui/Button'
@@ -23,9 +24,9 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_3px_rgba(0,0,0,0.04)]' : 'bg-transparent'}`}>
       <Container className="flex items-center justify-between h-[68px]">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-heading font-bold text-lg text-primary cursor-pointer tracking-tight">
+        <Link href="/" className="font-heading font-bold text-lg text-primary tracking-tight">
           {SITE.name}
-        </button>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-7">
           {NAV.map(l => (
@@ -36,7 +37,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button size="sm">Agendar demo</Button>
+          <Button size="sm" onClick={(e) => e.preventDefault()}>Agendar demo</Button>
         </div>
 
         <button className="md:hidden p-2 -mr-2 cursor-pointer" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -48,14 +49,13 @@ export default function Navbar() {
         </button>
       </Container>
 
-      {/* Mobile */}
       <div className={`md:hidden fixed inset-0 top-[68px] bg-white z-40 transition-opacity duration-300 ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <Container className="flex flex-col gap-5 pt-8">
           {NAV.map(l => (
             <button key={l.id} onClick={() => { scrollTo(l.id); setOpen(false) }} className="text-lg font-medium text-primary text-left cursor-pointer">{l.label}</button>
           ))}
           <hr className="border-border" />
-          <Button size="lg" className="w-full">Agendar demo</Button>
+          <Button size="lg" className="w-full" onClick={(e) => e.preventDefault()}>Agendar demo</Button>
         </Container>
       </div>
     </header>
