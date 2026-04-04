@@ -142,7 +142,7 @@
       0%, 100% { transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(0); }
       50% { transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-10px); }
     }
-    .hero-mockup { animation: float 6s ease-in-out infinite; }
+    .hero-mockup { animation: float 6s ease-in-out infinite; overflow: hidden; }
     .mockup-wrapper { transform: scale(0.85); transform-origin: top center; }
     .browser-chrome {
       border-radius: 16px; overflow: hidden;
@@ -307,6 +307,58 @@
       border: 1px solid rgba(27,122,74,0.2); font-weight: 500;
     }
 
+    /* Como funciona */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .step-card {
+      background: var(--bg-light); border: 1px solid var(--border-light);
+      border-radius: 22px; padding: 24px; box-shadow: var(--card-shadow-light);
+    }
+    .step-number {
+      width: 48px; height: 48px; border-radius: 14px; display: flex;
+      align-items: center; justify-content: center; font-weight: 800;
+      margin-bottom: 16px; font-size: 1.1rem; color: white;
+      background: var(--green-primary);
+    }
+    .step-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-on-light); }
+    .step-card p { color: var(--text-on-light-muted); font-size: 0.95rem; }
+
+    /* Comparison */
+    .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 10px; color: var(--text-on-dark-muted); }
+    .compare-table td { padding: 10px 0; border-bottom: 1px solid var(--border-dark); }
+    .compare-table td:last-child { text-align: right; font-weight: 600; color: var(--text-on-dark); }
+
+    /* CTA */
+    .cta-block {
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
+      border-radius: 32px; border: 1px solid var(--border-dark); padding: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(25,198,255,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(27,122,74,0.18), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--card-shadow-dark);
+    }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; min-width: 260px; }
+
+    /* Footer */
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr auto; align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; gap: 16px;
+    }
+    .tag-dark {
+      padding: 8px 14px; border-radius: 999px; font-size: 0.85rem;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
     @media (max-width: 1050px) {
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
@@ -316,6 +368,10 @@
       .mock-sidebar { display: none; }
       .pain-grid { grid-template-columns: 1fr; }
       .showcase { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .cta-block { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .nav-actions { display: none; }
@@ -323,6 +379,9 @@
       .hero { padding: 36px 0; }
       .hero-actions { flex-direction: column; }
       .hero-actions .button { width: 100%; }
+      .cta-block { padding: 18px; }
+      .cta-actions { width: 100%; }
+      .cta-actions .button { width: 100%; }
     }
   </style>
 </head>
@@ -361,7 +420,7 @@
   </div>
 
   <main>
-    <section class="hero" id="top">
+    <section class="hero reveal" id="top">
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="eyebrow">Inteligência Artificial aplicada à contabilidade</div>
@@ -479,7 +538,7 @@
       </div>
     </section>
 
-    <section class="pain-section" style="background: var(--bg-dark-soft); padding: 72px 0;">
+    <section class="pain-section reveal" style="background: var(--bg-dark-soft); padding: 72px 0;">
       <div class="container">
         <div class="section-head">
           <h2>Sua operação está preparada para crescer?</h2>
@@ -508,9 +567,9 @@
       </div>
     </section>
 
-    <div class="transition-band">A contabilidade evoluiu. Seu processo também precisa evoluir.</div>
+    <div class="transition-band reveal">A contabilidade evoluiu. Seu processo também precisa evoluir.</div>
 
-    <section id="solucao" class="light-section" style="background: var(--bg-light); padding: 72px 0;">
+    <section id="solucao" class="light-section reveal" style="background: var(--bg-light); padding: 72px 0;">
       <div class="container">
         <div class="section-head">
           <h2>Conheça o Isa Concilia</h2>
@@ -536,26 +595,147 @@
       </div>
     </section>
 
-    <section id="como-funciona">
+    <section id="como-funciona" class="light-section reveal" style="background: var(--bg-light-soft); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como funciona</h2>
+          <p>Um fluxo simples, rápido e desenhado para encaixar na rotina do escritório.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Integração dos dados</h3>
+            <p>Conecte os extratos bancários e as informações contábeis que alimentam o balancete.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Processamento com IA</h3>
+            <p>O sistema cruza os dados, identifica padrões e propõe correspondências automaticamente.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Conciliação concluída</h3>
+            <p>Sua equipe valida o que for necessário e conclui o processo em uma fração do tempo.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="beneficios">
+    <section id="beneficios" class="reveal">
     </section>
 
-    <section id="diferencial">
+    <section id="diferencial" class="reveal" style="background: var(--bg-dark); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Não é mais um sistema contábil</h2>
+          <p>O Isa Concilia não foi pensado apenas para registrar informações, mas para fazer o processo acontecer com eficiência real.</p>
+        </div>
+        <div class="compare-grid">
+          <div class="glass-card">
+            <h3>Modelo tradicional</h3>
+            <table class="compare-table">
+              <tr><td>Conciliação</td><td>Manual</td></tr>
+              <tr><td>Velocidade</td><td>Lenta</td></tr>
+              <tr><td>Erros</td><td>Recorrentes</td></tr>
+              <tr><td>Escala</td><td>Limitada</td></tr>
+              <tr><td>Equipe</td><td>Sobrecarregada</td></tr>
+            </table>
+          </div>
+          <div class="glass-card" style="background: linear-gradient(135deg, rgba(27,122,74,0.16), rgba(25,198,255,0.12));">
+            <h3>Com Isa Concilia</h3>
+            <table class="compare-table">
+              <tr><td>Conciliação</td><td>Automatizada</td></tr>
+              <tr><td>Velocidade</td><td>Rápida</td></tr>
+              <tr><td>Erros</td><td>Reduzidos</td></tr>
+              <tr><td>Escala</td><td>Expandida</td></tr>
+              <tr><td>Equipe</td><td>Mais estratégica</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="decision-section">
+    <section class="decision-section reveal" style="background: var(--bg-dark-soft); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Você tem duas opções</h2>
+          <p>Continuar operando com gargalos manuais ou transformar sua rotina com automação inteligente.</p>
+        </div>
+        <div class="compare-grid">
+          <div class="glass-card">
+            <h3>Continuar como está</h3>
+            <ul class="icon-list">
+              <li><span class="bullet grey">•</span>Mais esforço operacional</li>
+              <li><span class="bullet grey">•</span>Mais risco de erro</li>
+              <li><span class="bullet grey">•</span>Menos escala para crescer</li>
+            </ul>
+          </div>
+          <div class="glass-card" style="background: linear-gradient(135deg, rgba(27,122,74,0.16), rgba(25,198,255,0.12));">
+            <h3>Evoluir com Isa Concilia</h3>
+            <ul class="icon-list">
+              <li><span class="bullet green">✓</span>Automação inteligente</li>
+              <li><span class="bullet green">✓</span>Mais velocidade e previsibilidade</li>
+              <li><span class="bullet green">✓</span>Operação pronta para crescer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="cta-final">
+    <section id="cta-final" class="reveal" style="background: var(--bg-dark); padding: 72px 0;">
+      <div class="container">
+        <div class="cta-block">
+          <div class="cta-content">
+            <div class="eyebrow">Pronto para transformar sua contabilidade?</div>
+            <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); margin: 14px 0;">Menos operação. Mais resultado.</h2>
+            <p style="color: var(--text-on-dark-muted); max-width: 58ch;">Solicite uma demonstração do Isa Concilia e veja como a automação pode acelerar sua rotina contábil com mais precisão, organização e escala.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button primary" href="mailto:contato@isaconcilia.com.br">Agendar demonstração</a>
+            <a class="button secondary" href="mailto:contato@isaconcilia.com.br">Falar com especialista</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="reveal" style="background: var(--bg-dark); padding: 26px 0 48px; color: var(--text-on-dark-muted);">
+    <div class="container footer-grid">
+      <div>
+        <strong style="color: var(--text-on-dark);">Isa Concilia</strong>
+        <div>Automação inteligente para a rotina contábil.</div>
+      </div>
+      <div class="tag-list" style="justify-content: flex-end;">
+        <span class="tag-dark">Inteligência Artificial</span>
+        <span class="tag-dark">Conciliação Automática</span>
+        <span class="tag-dark">Escritório Contábil</span>
+      </div>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 24px; font-size: 0.85rem;">
+      © 2026 ISA — Intelligent Systems for Accounting
+    </div>
   </footer>
 
   <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const menu = document.querySelector('.mobile-menu');
+      const hamburger = document.querySelector('.hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
   </script>
 
 </body>
