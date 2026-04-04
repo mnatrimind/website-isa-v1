@@ -9,7 +9,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="como-funciona" className="py-24 md:py-32">
+    <section id="como-funciona" className="bg-surface py-24 md:py-32">
       <Container>
         <SectionHeading
           label="Como funciona"

@@ -5,57 +5,96 @@ import { SITE, NAV_LINKS, scrollTo } from '@/lib/constants'
 import Container from './Container'
 import Button from '@/components/ui/Button'
 
+const productLinks = NAV_LINKS
+const resourceLinks = [
+  { label: 'Recursos', href: '/website-isa-v1/learn/' },
+  { label: 'Como funciona', id: 'como-funciona' },
+]
+const companyLinks = [
+  { label: 'Sobre', id: 'cta' },
+  { label: 'Contato' },
+]
+const legalLinks = [
+  { label: 'Política de Privacidade', href: '/website-isa-v1/privacy-policy/' },
+  { label: 'Termos de Uso', href: '/website-isa-v1/terms-of-service/' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-[#0A2540] pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-12 border-b border-white/10">
+          {/* Brand */}
+          <div className="col-span-2">
             <span className="text-white font-semibold text-lg block mb-2">{SITE.name}</span>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Automação inteligente para contabilidade.
             </p>
+            <Button variant="primary" size="sm" onClick={(e) => e.preventDefault()}>
+              {SITE.cta.primary}
+            </Button>
           </div>
 
+          {/* Product */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Produto</h4>
             <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
+              {productLinks.map((link) => (
                 <li key={link.id}>
-                  <button
-                    onClick={() => scrollTo(link.id)}
-                    className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
+                  <button onClick={() => scrollTo(link.id)} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">{link.label}</button>
+                </li>
+              ))}
+              <li><Link href="/website-isa-v1/product/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Ver produto</Link></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4">Recursos</h4>
+            <ul className="space-y-3">
+              {resourceLinks.map((link) => (
+                <li key={link.label}>
+                  {link.href ? (
+                    <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors duration-200">{link.label}</Link>
+                  ) : (
+                    <button onClick={() => link.id && scrollTo(link.id)} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">{link.label}</button>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Company */}
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Empresa</h4>
             <ul className="space-y-3">
-              <li><button onClick={(e) => e.preventDefault()} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">Contato</button></li>
-              <li><Link href="/website-isa-v1/privacidade/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Privacidade</Link></li>
-              <li><Link href="/website-isa-v1/termos/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Termos</Link></li>
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <button onClick={(e) => link.id ? scrollTo(link.id) : e.preventDefault()} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">{link.label}</button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="flex flex-col items-start gap-4">
-            <h4 className="text-white font-semibold text-sm">Comece agora</h4>
-            <Button variant="primary" size="md" onClick={(e) => e.preventDefault()}>
-              {SITE.cta.primary}
-            </Button>
+          {/* Legal */}
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4">Legal</h4>
+            <ul className="space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors duration-200">{link.label}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className="pt-8 text-center space-y-2">
           <p className="text-gray-500 text-xs">
             Ao utilizar esta plataforma, você concorda com nossa{' '}
-            <Link href="/website-isa-v1/privacidade/" className="underline hover:text-gray-400">Política de Privacidade</Link>
+            <Link href="/website-isa-v1/privacy-policy/" className="underline hover:text-gray-400">Política de Privacidade</Link>
             {' '}e{' '}
-            <Link href="/website-isa-v1/termos/" className="underline hover:text-gray-400">Termos de Uso</Link>.
+            <Link href="/website-isa-v1/terms-of-service/" className="underline hover:text-gray-400">Termos de Uso</Link>.
           </p>
           <p className="text-gray-500 text-xs">
             &copy; 2026 ISA — Intelligent Systems for Accounting

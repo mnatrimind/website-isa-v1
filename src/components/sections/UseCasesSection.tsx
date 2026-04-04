@@ -33,7 +33,7 @@ const cases = [
 
 export default function UseCasesSection() {
   return (
-    <section id="para-quem" className="bg-surface py-24 md:py-32">
+    <section id="para-quem" className="py-24 md:py-32">
       <Container>
         <SectionHeading
           label="Para quem"
