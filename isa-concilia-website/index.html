@@ -246,6 +246,43 @@
     .pill.red { background: #EF4444; }
     .pill.amber { background: #F59E0B; }
 
+    /* Pain section */
+    .section-head { max-width: 760px; margin-bottom: 30px; }
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08;
+      letter-spacing: -0.04em; margin-bottom: 14px;
+    }
+    .section-head p { color: var(--text-on-dark-muted); font-size: 1.05rem; }
+
+    .light-section .section-head h2 { color: var(--text-on-light); }
+    .light-section .section-head p { color: var(--text-on-light-muted); }
+
+    .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+    .glass-card {
+      background: var(--card-dark); border: 1px solid var(--border-dark);
+      border-radius: 22px; padding: 24px; box-shadow: var(--card-shadow-dark);
+    }
+    .glass-card h3 { font-size: 1.25rem; margin-bottom: 16px; }
+
+    .icon-list { list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--text-on-dark-muted); }
+    .icon-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .bullet {
+      width: 24px; height: 24px; border-radius: 50%; display: inline-flex;
+      align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0;
+    }
+    .bullet.grey { background: rgba(255,255,255,0.08); }
+    .bullet.green { background: rgba(143,240,214,0.14); color: #d6fff5; }
+
+    .transition-band {
+      padding: 34px 0; text-align: center;
+      font-size: clamp(1.25rem, 2.8vw, 2rem); font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(90deg, rgba(107,78,255,0.12), rgba(25,198,255,0.08), rgba(143,240,214,0.08));
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
     @media (max-width: 1050px) {
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
@@ -253,6 +290,7 @@
       .hero-mockup { animation: none; }
       .mockup-wrapper { transform: scale(1); }
       .mock-sidebar { display: none; }
+      .pain-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .nav-actions { display: none; }
@@ -416,11 +454,36 @@
       </div>
     </section>
 
-    <section class="pain-section">
+    <section class="pain-section" style="background: var(--bg-dark-soft); padding: 72px 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Sua operação está preparada para crescer?</h2>
+          <p>Quando a conciliação depende de esforço manual, o escritório perde velocidade, aumenta o risco operacional e limita a própria escala.</p>
+        </div>
+        <div class="pain-grid">
+          <div class="glass-card">
+            <h3>O cenário mais comum</h3>
+            <ul class="icon-list">
+              <li><span class="bullet grey">•</span>Horas perdidas conferindo lançamentos e saldos</li>
+              <li><span class="bullet grey">•</span>Erros que só aparecem no fechamento</li>
+              <li><span class="bullet grey">•</span>Equipe sobrecarregada com tarefas repetitivas</li>
+              <li><span class="bullet grey">•</span>Dificuldade para padronizar processos</li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>O impacto no negócio</h3>
+            <ul class="icon-list">
+              <li><span class="bullet green">→</span>Menor produtividade por colaborador</li>
+              <li><span class="bullet green">→</span>Mais retrabalho e menor previsibilidade</li>
+              <li><span class="bullet green">→</span>Menos tempo para análise e atendimento ao cliente</li>
+              <li><span class="bullet green">→</span>Crescimento travado por gargalos operacionais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="transition-band">
-    </div>
+    <div class="transition-band">A contabilidade evoluiu. Seu processo também precisa evoluir.</div>
 
     <section id="solucao">
     </section>
