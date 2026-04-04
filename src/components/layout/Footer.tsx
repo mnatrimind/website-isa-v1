@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 
 const productLinks = NAV_LINKS
 const resourceLinks = [
-  { label: 'Recursos', href: '/website-isa-v1/learn/' },
+  { label: 'Recursos', href: '/learn/' },
   { label: 'Como funciona', id: 'como-funciona' },
 ]
 const companyLinks = [
@@ -15,8 +15,8 @@ const companyLinks = [
   { label: 'Contato' },
 ]
 const legalLinks = [
-  { label: 'Política de Privacidade', href: '/website-isa-v1/privacidade/' },
-  { label: 'Termos de Uso', href: '/website-isa-v1/termos/' },
+  { label: 'Política de Privacidade', href: '/privacidade/' },
+  { label: 'Termos de Uso', href: '/termos/' },
 ]
 
 export default function Footer() {
@@ -44,7 +44,7 @@ export default function Footer() {
                   <button onClick={() => scrollTo(link.id)} className="text-gray-400 text-sm hover:text-white transition-colors duration-200 cursor-pointer">{link.label}</button>
                 </li>
               ))}
-              <li><Link href="/website-isa-v1/product/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Ver produto</Link></li>
+              <li><Link href="/product/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">Ver produto</Link></li>
             </ul>
           </div>
 
@@ -92,9 +92,9 @@ export default function Footer() {
         <div className="pt-8 text-center space-y-2">
           <p className="text-gray-500 text-xs">
             Ao utilizar esta plataforma, você concorda com nossa{' '}
-            <Link href="/website-isa-v1/privacidade/" className="underline hover:text-gray-400">Política de Privacidade</Link>
+            <Link href="/privacidade/" className="underline hover:text-gray-400">Política de Privacidade</Link>
             {' '}e{' '}
-            <Link href="/website-isa-v1/termos/" className="underline hover:text-gray-400">Termos de Uso</Link>.
+            <Link href="/termos/" className="underline hover:text-gray-400">Termos de Uso</Link>.
           </p>
           <p className="text-gray-500 text-xs">
             &copy; 2026 ISA — Intelligent Systems for Accounting
