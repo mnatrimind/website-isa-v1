@@ -16,7 +16,7 @@ export default function SectionHeading({
       <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">
         {label}
       </p>
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-primary-text tracking-tight mb-4">
+      <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-primary-text tracking-tight mb-4">
         {title}
       </h2>
       {description && (

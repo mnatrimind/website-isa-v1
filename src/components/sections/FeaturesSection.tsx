@@ -1,17 +1,17 @@
 import Container from '@/components/layout/Container'
 import SectionHeading from '@/components/ui/SectionHeading'
-import FeatureCard from '@/components/ui/FeatureCard'
 
 const features = [
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
       </svg>
     ),
     title: 'Conciliação automática',
-    description: 'Extratos e balancete cruzados automaticamente. O sistema identifica correspondências e sinaliza exceções.',
+    description: 'Extratos e balancete cruzados automaticamente. O sistema identifica correspondências e sinaliza exceções para revisão humana — sem trabalho manual.',
+    featured: true,
   },
   {
     icon: (
@@ -20,7 +20,7 @@ const features = [
       </svg>
     ),
     title: 'Integração com balancete',
-    description: 'Importe dados do seu sistema contábil e conecte diretamente aos extratos bancários.',
+    description: 'Importe dados do seu sistema contábil e conecte aos extratos bancários.',
   },
   {
     icon: (
@@ -29,7 +29,7 @@ const features = [
       </svg>
     ),
     title: 'IA que aprende',
-    description: 'Melhora a cada ciclo, sugerindo classificações com mais precisão ao longo do tempo.',
+    description: 'Melhora a cada ciclo, sugerindo classificações com mais precisão.',
   },
   {
     icon: (
@@ -38,11 +38,13 @@ const features = [
       </svg>
     ),
     title: 'Detecção de inconsistências',
-    description: 'Divergências e lançamentos atípicos identificados antes do fechamento mensal.',
+    description: 'Divergências identificadas antes do fechamento mensal.',
   },
 ]
 
 export default function FeaturesSection() {
+  const [primary, ...rest] = features
+
   return (
     <section id="funcionalidades" className="py-24 md:py-32">
       <Container>
@@ -51,9 +53,35 @@ export default function FeaturesSection() {
           title="Automatize cada etapa da conciliação"
           description="Menos trabalho manual. Mais precisão. Resultados em minutos."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {features.map((f) => (
-            <FeatureCard key={f.title} icon={f.icon} title={f.title} description={f.description} />
+
+        {/* Featured card — full width */}
+        <div className="mb-6 md:mb-8">
+          <div className="relative rounded-2xl p-8 md:p-10 border border-border shadow-sm overflow-hidden" style={{
+            background: 'linear-gradient(135deg, #FAFAFF 0%, #F6F9FC 50%, #F4F0FF 100%)'
+          }}>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/[0.04] rounded-full blur-[60px]" />
+            <div className="relative flex flex-col md:flex-row md:items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+                {primary.icon}
+              </div>
+              <div className="max-w-xl">
+                <h3 className="font-heading text-xl font-bold text-primary-text mb-2">{primary.title}</h3>
+                <p className="text-secondary-text leading-relaxed">{primary.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary cards — 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {rest.map((f) => (
+            <div key={f.title} className="bg-white rounded-xl p-6 md:p-8 border border-border shadow-sm hover:shadow-md hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
+              <div className="w-11 h-11 rounded-xl bg-accent/8 flex items-center justify-center text-accent mb-4">
+                {f.icon}
+              </div>
+              <h3 className="font-heading text-base font-bold text-primary-text mb-1.5">{f.title}</h3>
+              <p className="text-sm text-secondary-text leading-relaxed">{f.description}</p>
+            </div>
           ))}
         </div>
       </Container>
