@@ -7,7 +7,7 @@ export default function Button({ variant = 'primary', size = 'md', children, cla
   className?: string
   onClick?: (e: React.MouseEvent) => void
 }) {
-  const base = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 cursor-pointer whitespace-nowrap'
+  const base = 'inline-flex items-center justify-center rounded-[8px] font-medium transition-all duration-200 cursor-pointer whitespace-nowrap'
   const variants = {
     primary: 'bg-accent text-white hover:bg-accent-hover shadow-sm hover:shadow-md',
     secondary: 'bg-white text-primary border border-border hover:bg-surface',

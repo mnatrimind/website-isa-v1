@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+
+# Build outputs (will be rebuilt in Docker)
+.next
+out
+dist
+
+# Dependencies (will be installed in Docker)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Development
+.env.local
+.env.*.local
+.DS_Store
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.circleci
+
+# OS
+Thumbs.db

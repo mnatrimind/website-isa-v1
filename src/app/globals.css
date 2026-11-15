@@ -2,19 +2,20 @@
 
 @theme inline {
   --color-background: #FFFFFF;
-  --color-surface: #F6F9FC;
-  --color-primary: #0A2540;
-  --color-secondary: #425466;
-  --color-muted: #6B7C8F;
-  --color-border: #E6EBF1;
-  --color-accent: #635BFF;
-  --color-accent-hover: #7A73FF;
-  --color-green: #00A67E;
-  --color-amber: #F5A623;
-  --color-red: #E25C5C;
+  --color-surface: #f1f5f9;
+  --color-primary: #1e293b;
+  --color-secondary: #475569;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-green: #27a96c;
+  --color-amber: #d97706;
+  --color-red: #dc2626;
   --color-white: #FFFFFF;
-  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #1f2948;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -28,23 +29,8 @@
     color: var(--color-primary);
     background: var(--color-background);
   }
-  ::selection { background: rgba(99, 91, 255, 0.14); }
+  ::selection { background: rgba(37, 99, 235, 0.14); }
 
-  /* Stripe-style vertical dashed grid lines across entire page */
-  main::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 239px,
-      rgba(230, 235, 241, 0.45) 239px,
-      rgba(230, 235, 241, 0.45) 240px
-    );
-  }
   main > * { position: relative; z-index: 1; }
 
   @keyframes fadeUp {

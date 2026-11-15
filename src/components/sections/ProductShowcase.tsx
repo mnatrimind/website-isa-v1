@@ -14,28 +14,40 @@ function Step({ label, done, active, num }: { label: string; done?: boolean; act
 
 export default function ProductShowcase() {
   const rows = [
-    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) SICRED', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
-    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) SICRED', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
+    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) Banco', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
+    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) Banco', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
     { date: '27/01', cd: 'CRE', conta: 'Selecionar conta', valor: 'R$ 1.000.000', status: 'CONFERIR', c: 'bg-amber/10 text-amber', sel: true },
-    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) SICRED', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
+    { date: '27/01', cd: 'DEB', conta: '9-(1.1.1.02) Banco', valor: 'R$ 1.000.000', status: 'PRONTO', c: 'bg-green/10 text-green' },
   ]
 
   return (
-    <section className="py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #F6F9FC, #F0F4F8 50%, #F6F9FC)' }}>
+    <section id="solucao" className="overflow-hidden py-24 md:py-32" style={{ background: 'linear-gradient(180deg, #f1f5f9, #e2e8f0 50%, #f1f5f9)' }}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-2">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">O produto</p>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-primary mb-4">Veja cada etapa da conciliação</h2>
-            <p className="text-secondary leading-relaxed mb-8">Interface projetada para contadores. Importação, processamento e revisão em um único fluxo.</p>
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Solução</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-primary mb-4">Descubra o ISA Concilia</h2>
+            <p className="text-secondary leading-relaxed mb-8">A plataforma que automatiza a conciliação bancária, conecta extratos ao balancete de forma ágil e inteligente, precisão e velocidade com controle operacional</p>
             <ul className="space-y-3">
-              {['Importação automática de extratos', 'IA identifica correspondências', 'Exceções destacadas para revisão'].map(t => (
+              {['Conciliação automática', 'Integração com balancete', 'IA aplicada às etapas', 'Detecção de inconsistências'].map(t => (
                 <li key={t} className="flex items-start gap-3">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#635BFF" strokeWidth="2" strokeLinecap="round" className="mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12" /></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" className="mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12" /></svg>
                   <span className="text-sm text-secondary">{t}</span>
                 </li>
               ))}
             </ul>
+            <div className="mt-8 space-y-3">
+              {[
+                { title: 'Mais velocidade', text: 'Automatize o que antes tomava horas ou dias.' },
+                { title: 'Mais precisão', text: 'Reduza inconsistências e aumente a confiabilidade do processo.' },
+                { title: 'Mais escala', text: 'Atenda melhor e cresça sem expandir o peso operacional.' },
+              ].map(note => (
+                <div key={note.title} className="rounded-xl border border-border bg-white p-4">
+                  <p className="text-sm font-semibold text-primary">{note.title}</p>
+                  <p className="text-xs text-secondary mt-1">{note.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="lg:col-span-3 relative">
@@ -65,8 +77,8 @@ export default function ProductShowcase() {
                   <Step label="Resultado" num={4} />
                 </div>
 
-                <h3 className="text-sm font-semibold text-primary mb-0.5">Revise a Conciliação</h3>
-                <p className="text-[11px] text-muted mb-4">Valide as correspondências da IA.</p>
+                <h3 className="text-sm font-semibold text-primary mb-0.5">O sistema trabalha por você</h3>
+                <p className="text-sm text-muted mb-4">O ISA Concilia identifica correspondências, organiza exceções, sugere classificações e acelera a validação final. Em vez de gastar dias conciliando, sua equipe passa a operar com mais eficiência e foco.</p>
 
                 <div className="rounded-lg border border-border/50 overflow-x-auto">
                   <table className="w-full min-w-[440px]">

@@ -2,12 +2,15 @@
   "name": "website-isa-v1",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && rm -rf _next privacidade termos 404 404.html index.html favicon.ico 2>/dev/null; cp -rf out/* . && find . -maxdepth 1 -name '*.txt' -delete && find privacidade termos -name '*.txt' -delete 2>/dev/null; find privacidade termos -name '__next.*' -delete 2>/dev/null; rm -rf _not-found 404; touch .nojekyll"
+    "deploy": "npm run build && rm -rf _next privacidade termos ajuda-e-suporte 404 404.html index.html favicon.ico 2>/dev/null; cp -rf out/* . && find . -maxdepth 1 -name '*.txt' -delete && find privacidade termos -name '*.txt' -delete 2>/dev/null; find privacidade termos -name '__next.*' -delete 2>/dev/null; rm -rf _not-found 404; touch .nojekyll"
   },
   "dependencies": {
     "next": "16.2.2",
