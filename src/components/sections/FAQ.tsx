@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Container from '@/components/layout/Container'
 
 const faqs = [
-  { q: 'O Isa Concilia substitui meu sistema contábil?', a: 'Não. Ele complementa seu sistema atual. Conecta ao balancete e automatiza a conciliação bancária — sem substituir nenhuma ferramenta que você já usa.' },
+  { q: 'O ISA Concilia substitui meu sistema contábil?', a: 'Não. Ele complementa seu sistema atual. Conecta ao balancete e automatiza a conciliação bancária — sem substituir nenhuma ferramenta que você já usa.' },
   { q: 'Quanto tempo leva para começar?', a: 'Menos de 24 horas. Após a configuração inicial, sua equipe já realiza a primeira conciliação automatizada.' },
   { q: 'Preciso de conhecimento técnico?', a: 'Não. A interface foi desenhada para contadores. Se você usa um sistema contábil hoje, vai se adaptar rapidamente.' },
   { q: 'Como funciona o suporte?', a: 'Suporte por email e chat com especialistas que entendem de contabilidade — não apenas de tecnologia.' },

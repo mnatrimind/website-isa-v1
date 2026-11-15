@@ -1,9 +1,9 @@
 import Container from '@/components/layout/Container'
 
 const steps = [
-  { n: '01', title: 'Integre seus dados', desc: 'Conecte extratos bancários e importe o balancete do seu sistema contábil.' },
-  { n: '02', title: 'A IA processa', desc: 'Cruzamento automático de lançamentos, identificação de padrões e propostas de correspondência.' },
-  { n: '03', title: 'Revise e conclua', desc: 'Valide as sugestões, corrija exceções e finalize a conciliação em minutos.' },
+  { n: '01', title: 'Integração dos dados', desc: 'Conecte os extratos bancários e as informações contábeis que alimentam o balancete.' },
+  { n: '02', title: 'Processamento com IA', desc: 'O sistema cruza os dados, identifica padrões e propõe correspondências automaticamente.' },
+  { n: '03', title: 'Conciliação concluída', desc: 'Sua equipe valida o que for necessário e conclui o processo em uma fração do tempo.' },
 ]
 
 export default function HowItWorks() {
@@ -13,8 +13,8 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Como funciona</p>
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary">Três passos. Sem complexidade.</h2>
-            <p className="text-secondary mt-4 leading-relaxed max-w-md">Sem instalação complexa. Sem mudança no seu sistema. O Isa Concilia se adapta à sua rotina.</p>
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary">Um fluxo simples, rápido e desenhado para encaixar na rotina do escritório.</h2>
+            <p className="text-secondary mt-4 leading-relaxed max-w-md">Conecte, processe e valide com muito menos esforço manual.</p>
           </div>
 
           <div>
